@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>00037《美学》历年真题 · 刷题</title>
+<meta name="description" content="自考 00037《美学》2016—2026 年 21 套历年真题：选择题即时判分、主观题参考答案与解析、按考期练习、错题本，纯静态网页可离线使用。">
+<meta name="theme-color" content="#f6f3ec">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+  (function () {
+    try {
+      var raw = localStorage.getItem("meixue-exam-v1");
+      var saved = raw ? JSON.parse(raw) : null;
+      var t = saved && saved.theme;
+      if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+    } catch (e) { document.documentElement.setAttribute("data-theme", "light"); }
+  })();
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand" id="brandHome" role="button" tabindex="0" title="返回首页">
+    <span class="seal" aria-hidden="true">美</span>
+    <div class="brand-text">
+      <h1>00037《美学》历年真题</h1>
+      <p id="brandSub">2016.4 — 2026.4 · 21 套</p>
+    </div>
+  </div>
+  <div class="top-actions">
+    <button class="pill-btn" id="wrongBtn" type="button" title="错题本">
+      错题本<span class="badge" id="wrongCount">0</span>
+    </button>
+    <button class="icon-btn" id="themeBtn" type="button" aria-label="切换深色模式" title="深色模式">
+      <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.6 8.6 0 1 1 9.7 3.5a7 7 0 0 0 10.8 10.8Z"/></svg>
+      <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M4.4 4.4l1.6 1.6M18 18l1.6 1.6M2.6 12h2.2M19.2 12h2.2M4.4 19.6 6 18M18 6l1.6-1.6"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="progress-top"><i id="topProgress"></i></div>
+
+<main>
+  <!-- 首页：考期列表 -->
+  <section id="home" class="home">
+    <div class="hero">
+      <p class="hero-kicker">自考 00037</p>
+      <h2>历年真题</h2>
+      <p class="hero-sub" id="heroSub">21 套 · 665 道选择题 · 189 道主观题</p>
+      <div class="hero-actions">
+        <button class="btn primary" id="randomBtn" type="button">随机刷 20 道选择题</button>
+        <button class="btn ghost" id="wrongHeroBtn" type="button">刷错题</button>
+      </div>
+    </div>
+
+    <div class="period-grid" id="periodGrid"></div>
+
+    <p class="home-note">
+      选择题点选项即判分；主观题先自己想，再展开参考答案对照。进度只保存在本机浏览器里。
+    </p>
+  </section>
+
+  <!-- 练习页 -->
+  <section id="practice" class="practice" hidden>
+    <div class="practice-head">
+      <button class="back-btn" id="backBtn" type="button" aria-label="返回">←</button>
+      <div class="practice-title">
+        <b id="pTitle">—</b>
+        <span id="pSub">—</span>
+      </div>
+      <div class="practice-count" id="pCount">0 / 0</div>
+    </div>
+
+    <div class="seg-tabs" id="modeTabs" role="tablist">
+      <button type="button" data-mode="choice" class="is-on" role="tab">选择题</button>
+      <button type="button" data-mode="essay" role="tab">简答题</button>
+    </div>
+
+    <div class="bar"><i id="pBar"></i></div>
+
+    <article class="qcard" id="qcard" aria-live="polite"></article>
+
+    <nav class="qnav">
+      <button class="btn ghost" id="prevBtn" type="button">上一题</button>
+      <span class="qnav-dots" id="qnavDots"></span>
+      <button class="btn primary" id="nextBtn" type="button">下一题</button>
+    </nav>
+  </section>
+</main>
+
+<footer class="foot">
+  <span>题库来自《美学》2016—2026 年真题（21 套），答案与解析依原卷整理。</span>
+</footer>
+
+<script src="data/exam.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
